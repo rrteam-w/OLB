@@ -1,4 +1,4 @@
-*****Online Banking System*****
+# ******Online Banking System***** #
 
 The Banking system consists of two parts: Customer-Interface and Admin-Portal. 
 
@@ -7,7 +7,7 @@ Appointment, Transaction and User Profile.
 
 Admin-Portal is mainly used by Admin and it involves User Sign up Account and Appointment modules.
 
-##DB Credential on AWS##
+## DB Credential on AWS ##
 
 URL : rrteam-w-pnc.cz1vfvtqy1ob.us-east-2.rds.amazonaws.com
 Port : 3306
