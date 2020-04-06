@@ -20,4 +20,9 @@ Two type of schema created
 
 Download my sql workbench from
   1. https://dev.mysql.com/downloads/file/?id=492434
+  
+  #### after connect to remote DB first time #######
+  create database rakesh;
+  use rakesh;
+  use your name in place of rakesh
 
