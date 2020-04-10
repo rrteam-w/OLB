@@ -35,3 +35,8 @@ https://www.youtube.com/watch?v=1LWXd25nAoo
 @Rakesh : Create expected JSON for input/output column and insert in excel sheet where JSON is written
 <br>
 @Ramesh : Please create DB model based on RestServices plan mentioned in RestServices.xml
+
+# cI CD Pipeline #
+## Jenkin ##
+http://ec2-18-222-217-188.us-east-2.compute.amazonaws.com:8080/
+username:rrteam
