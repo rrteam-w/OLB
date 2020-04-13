@@ -41,4 +41,4 @@ https://www.youtube.com/watch?v=1LWXd25nAoo
 http://ec2-18-222-217-188.us-east-2.compute.amazonaws.com:8080/
 username:rrteam
 
-##  Look at section Deploy Code to EC2 instance for the process of deployment to ec2 ##
+##  Look at section in EC2.docx "Deploy Code to EC2 instance" for the process of deployment to ec2 ##
