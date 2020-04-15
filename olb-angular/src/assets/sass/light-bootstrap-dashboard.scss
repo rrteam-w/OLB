@@ -1,0 +1,29 @@
+@import "olb/variables";
+@import "olb/mixins";
+
+@import "olb/typography";
+
+// Core CSS
+@import "olb/misc";
+@import "olb/sidebar-and-main-panel";
+@import "olb/buttons";
+@import "olb/inputs";
+
+@import "olb/alerts";
+@import "olb/tables";
+
+@import "olb/checkbox-radio-switch";
+@import "olb/navbars";
+@import "olb/footers";
+
+// Fancy Stuff
+@import "olb/dropdown";
+@import "olb/cards";
+@import "olb/chartist";
+@import "olb/responsive";
+
+.bg {
+    background-color: #4e73df;
+    background-image: linear-gradient(180deg,#4e73df 10%,#224abe 100%);
+    background-size: cover;
+}
