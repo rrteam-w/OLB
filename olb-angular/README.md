@@ -8,7 +8,7 @@
 5. Then: ```npm install```
 6. And: ```ng serve```
 7. Navigate to `http://localhost:4200/`
-
+<!-- 
 ### What's included
 
 light-bootstrap-dashboard-angular
@@ -78,4 +78,4 @@ light-bootstrap-dashboard-angular
 │   ├── test.ts
 │   └── tsconfig.json
 ├── tslint.json
-└── typings.json
+└── typings.json -->
