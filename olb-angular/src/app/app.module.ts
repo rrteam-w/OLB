@@ -17,6 +17,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginComponent } from './login/login.component';
 import { AccountsComponent } from './customer/accounts/accounts.component';
 import { CustomerLayoutComponent } from './layouts/customer-layout/customer-layout.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { CustomerLayoutComponent } from './layouts/customer-layout/customer-layo
     AdminLayoutComponent,
     LoginComponent,
     AccountsComponent,
-    CustomerLayoutComponent
+    CustomerLayoutComponent,
+    ForgotpasswordComponent
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
