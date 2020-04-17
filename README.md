@@ -42,3 +42,4 @@ http://ec2-18-222-217-188.us-east-2.compute.amazonaws.com:8080/
 username:rrteam
 
 ###  Look at section in EC2.docx "Deploy Code to EC2 instance" for the process of deployment to ec2 ###
+EC2 DNS : ec2-52-15-50-46.us-east-2.compute.amazonaws.com
