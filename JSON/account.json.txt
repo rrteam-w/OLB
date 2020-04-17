@@ -1,0 +1,26 @@
+{
+   "accountId":"4003",
+   "custId":"2001",
+   "accountBalance":1000.00,
+   "accountType":"Saving",
+   "transactions":[
+      {
+         "trasactionId":"5001",
+         "accountId":"4003",
+         "transactionType":"Debit",
+         "beneficiaryAccountId":"4002",
+         "transactionAmout":500.00,
+         "transactionDt":"04/16/2020",
+         "transactionRemark":"Weekly expenses"
+      },
+      {
+         "trasactionId":"5001",
+         "accountId":"4003",
+         "transactionType":"Credit",
+         "beneficiaryAccountId":"4001",
+         "transactionAmout":200.00,
+         "transactionDt":"04/15/2020",
+         "transactionRemark":"Payment for loan"
+      }
+   ]
+}

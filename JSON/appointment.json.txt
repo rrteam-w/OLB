@@ -1,0 +1,7 @@
+{
+  appointmentId : "1001",
+  custId : "2001",
+  appointmentDt : "04/21/2020",
+  appointmentDesc : "Account not accesible",
+  approve : false
+}
