@@ -8,6 +8,7 @@ import { CustomerLayoutRoutes } from './customer-layout.routing';
 import { HomeComponent } from '../../home/home.component';
 import { TablesComponent } from '../../tables/tables.component';
 import { FundsComponent } from 'app/funds/funds.component';
+import { BeneficiaryComponent } from 'app/beneficiary/beneficiary.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { FundsComponent } from 'app/funds/funds.component';
   declarations: [
     HomeComponent,
     TablesComponent,
-    FundsComponent
+    FundsComponent,
+    BeneficiaryComponent
   ]
 })
 
