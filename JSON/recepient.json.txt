@@ -1,0 +1,9 @@
+{
+  beneficiaryId : "3001",
+  custId : "2001",
+  beneficiaryAccNum : "4001",
+  beneficiaryPhNum : "123-456-7890",
+  beneficiaryEmail : "beneficiary3001@gmail.com",
+  beneficaryType : "External",
+  beneficiaryBank : "IndusInd"
+}

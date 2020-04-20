@@ -1,0 +1,9 @@
+{
+  trasactionId : "5001",
+  accountId : "4001",
+  transactionType: "Debit",
+  beneficiaryAccountId : "4002",
+  transactionAmout : 500.00,
+  transactionDt : "04/16/2020",
+  transactionRemark : "Weekly expenses"
+}
