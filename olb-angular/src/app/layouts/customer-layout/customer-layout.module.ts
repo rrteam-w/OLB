@@ -7,16 +7,19 @@ import { CustomerLayoutRoutes } from './customer-layout.routing';
 
 import { HomeComponent } from '../../home/home.component';
 import { TablesComponent } from '../../tables/tables.component';
+import { FundsComponent } from 'app/funds/funds.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(CustomerLayoutRoutes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HomeComponent,
-    TablesComponent
+    TablesComponent,
+    FundsComponent
   ]
 })
 

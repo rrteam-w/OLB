@@ -8,6 +8,7 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { HomeComponent } from '../../home/home.component';
 import { UserComponent } from '../../user/user.component';
 import { TablesComponent } from '../../tables/tables.component';
+import { FundsComponent } from 'app/funds/funds.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { TablesComponent } from '../../tables/tables.component';
   declarations: [
     HomeComponent,
     UserComponent,
-    TablesComponent
+    TablesComponent,
+    FundsComponent
   ]
 })
 
