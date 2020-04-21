@@ -34,19 +34,11 @@ export class LoginComponent implements OnInit {
     this.loginService.logout();
   }
 
-  // authenticate() {
-
-  //   console.log("authenticate called");
-  //   localStorage.setItem('isLoggedin', "true");
-  //   this.router.navigate(['dashboard']);
-  // }
-
   get f() { return this.loginForm.controls; }
 
   onSubmit() {
       this.submitted = true;
 
-      // stop here if form is invalid
       if (this.loginForm.invalid) {
         return;
       }
@@ -56,7 +48,13 @@ export class LoginComponent implements OnInit {
       this.loginService.authenticate(this.f.username.value, this.f.password.value)
         .pipe(first())
         .subscribe(data => {
-            this.router.navigate(['/account']);
+            if(data.status == 200) {
+              this.router.navigate(['/account']);
+            }
+            else {
+              this.inValid = true;
+              this.loading = false;
+            }
         }, error => {
           this.inValid = true;
           this.loading = false;

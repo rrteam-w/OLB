@@ -17,21 +17,13 @@ export class LoginService {
               // login successful if there's a jwt token in the response
               if (user && (user.email == email && user.password == password)) { // && user.token
                   // store user details and jwt token in local storage to keep user logged in between page refreshes
+                  // localStorage.setItem('currentUser', JSON.stringify(user));
                   localStorage.setItem('isLoggedin', "true");
+                  user.status = 200;
               }
 
               return user;
           }));
-    // let authFlag = false;
-    // this.httpClient.get<any>(environment.api.customer).subscribe(cust => {
-    //   if(cust && cust.email === email && cust.password === password) {
-    //     console.log("inside if loop");
-    //     authFlag = true;
-    //     localStorage.setItem('isLoggedin', "true");
-    //   }
-    // });
-
-    // return authFlag;
   }
 
   logout() {
