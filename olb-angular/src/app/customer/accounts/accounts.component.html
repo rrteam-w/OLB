@@ -1,1 +1,95 @@
-<p>accounts works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row" *ngIf="accounts">
+            <div class="col-md-6" *ngIf="savings">
+                <div class="card">
+                    <div class="header">
+                        <h3 class="title">Savings Account</h3>
+                    </div>
+                    <div class="content">
+                        <div class="row table-full-width">
+                            <div class="col-md-3">
+                                <img width="100%" src="../../../assets/img/savings.jfif" />
+                            </div>
+                            <div class="col-md-9">
+                                <h4>Account Balance : ${{accountDetails.accountBalance}}</h4>
+                                <p>Account ID : {{accountDetails.accountId}}</p>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr>
+                            <div class="stats">
+                                <i class="fa fa-history"></i> Updated 3 minutes ago
+                            </div>
+                            <button class="pull-right btn btn-success" (click)="getAccountSummary(accountDetails.accountID)">View Account Summary</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" *ngIf="current">
+                <div class="card">
+                    <div class="header">
+                        <h3 class="title">Current Account</h3>
+                    </div>
+                    <div class="content">
+                        <div class="row table-full-width">
+                            <div class="col-md-3">
+                                <img width="100%" src="../../../assets/img/current.jfif" />
+                            </div>
+                            <div class="col-md-9">
+                                <h4>Account Balance : 2000</h4>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr>
+                            <div class="stats">
+                                <i class="fa fa-history"></i> Updated 3 minutes ago
+                            </div>
+                            <button class="pull-right btn btn-danger">View Account Summary</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="accountSummary">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h3>Account Balance : ${{accountDetails.accountBalance}}</h3>
+                        <p>Account ID : {{accountDetails.accountId}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="pull-right btn btn-primary" (click)="showAccounts()">Back</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Transaction History</h4>
+                        <p class="category">All Debit, ATM and Online transaction history can be seen</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let trans of accountTransactions">
+                                        <td>{{trans.transactionDt}}</td>
+                                        <td>{{trans.transactionRemark}}</td>
+                                        <td>{{trans.transactionType}}</td>
+                                        <td>{{trans.transactionAmout}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
