@@ -3,19 +3,32 @@ package com.rrteam.olb.model;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="Accounts")
-public class Accounts implements Serializable {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	
+@Entity
+@Table(name="Account")
+public class Account implements Serializable {
+
 	private static final long serialVersionUID = -2596900152895137272L;
 	
+	@Column(name="accountId")
 	private String accountId;
+	
+	@Id
+	@Column(name="custId")
 	private String custId;
+	
+	@Column(name="accountBalance")
 	private String accountBalance;
+	
+	@Column(name="accountType")
 	private String accountType;
-	private List<Transactions> transactionDetails;
+	
+	private List<Transaction> transactions;
 	
 	public String getAccountId() {
 		return accountId;
@@ -41,15 +54,10 @@ public class Accounts implements Serializable {
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-	public List<Transactions> getTransactionDetails() {
-		return transactionDetails;
+	public List<Transaction> getTransactions() {
+		return transactions;
 	}
-	public void setTransactionDetails(List<Transactions> transactionDetails) {
-		this.transactionDetails = transactionDetails;
+	public void setTransactionDetails(List<Transaction> transactions) {
+		this.transactions = transactions;
 	}
-	
-	
-	
-	
-
 }

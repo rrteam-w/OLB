@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "Transactions")
-public class Transactions implements Serializable {
+public class Transaction implements Serializable {
 
 	private static final long serialVersionUID = -6894892329132650887L;
 
