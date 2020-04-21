@@ -1,10 +1,11 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AuthGuard } from './shared/guard/auth.guard';
+import { LoginService } from './_service/login.service';
 
 import { AppRoutingModule } from './app.routing';
 import { NavbarModule } from './shared/navbar/navbar.module';
@@ -23,6 +24,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
   imports: [
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
     NavbarModule,
@@ -38,7 +40,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     CustomerLayoutComponent,
     ForgotpasswordComponent
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
