@@ -1,8 +1,5 @@
-package com.rrteam.olb.repository;
+package com.rrteam.repository;
 
-public class CustomerRepository
-{
-	
-	
+public class CustomerRepository {
 
 }

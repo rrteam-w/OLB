@@ -1,44 +1,25 @@
-package com.rrteam.olb.model;
+package com.rrteam.model;
 
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity
-@Table(name="Customer")
+@XmlRootElement(name="Customer")
 public class Customer implements Serializable {
 
 	private static final long serialVersionUID = 8154553394154317648L;
 	
-	@Id
-	@Column(name="custId")
 	private String custId;
-	
-	@Column(name="userName")
 	private String userName;
-	
-	@Column(name="password")
 	private String password;
-	
-	@Column(name="firstName")
 	private String firstName;
-	
-	@Column(name="lastName")
 	private String lastName;
-	
-	@Column(name="email")
 	private String email;
-	
-	@Column(name="phone")
 	private String phone;
+	private List<Accounts> accountDetails;
 	
-	private List<Account> accountDetails;
 	
-
 	public String getCustId() {
 		return custId;
 	}
@@ -82,10 +63,10 @@ public class Customer implements Serializable {
 		this.phone = phone;
 	}
 
-	public List<Account> getAccountDetails() {
+	public List<Accounts> getAccountDetails() {
 		return accountDetails;
 	}
-	public void setAccountDetails(List<Account> accountDetails) {
+	public void setAccountDetails(List<Accounts> accountDetails) {
 		this.accountDetails = accountDetails;
 	}
 
