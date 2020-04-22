@@ -1,4 +1,4 @@
-package com.rrteam.controller;
+package com.rrteam.olb.controller;
 
 import java.util.List;
 
@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rrteam.model.Recepient;
-import com.rrteam.service.RecepientService;
+import com.rrteam.olb.model.Recepient;
+import com.rrteam.olb.service.RecepientService;
+
 
 @RestController
 @RequestMapping("/recepient") 
@@ -21,21 +22,20 @@ public class RecepientController {
 	RecepientService recepientService;
 	
 	  //add payee
-  	@RequestMapping(value = "/addrecepient", method = RequestMethod.PUT,consumes = MediaType.APPLICATION_JSON_VALUE)
-  	public String addRecepient(@RequestBody Recepient recepient){
-  		this.recepientService.addRecepient(recepient);
-  		return "Succesfully Added Payee";
+  	@RequestMapping(value = "/add", method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
+  	public Recepient addRecepient(@RequestBody Recepient recepient){
+  		return this.recepientService.addRecepient(recepient);  		
   	}
   	
-	@RequestMapping(value = "/recepients/{custaccountid}", method = RequestMethod.GET)
-	public List<Recepient> getRecepients(@PathVariable("custaccountid") Long custaccountid){
+	@RequestMapping(value = "/findrecepients/{custaccountid}", method = RequestMethod.GET)
+	public List<Recepient> getRecepients(@PathVariable("custaccountid") Integer custaccountid){
 	
 		List<Recepient> recepients = this.recepientService.getRecepients(custaccountid);
 		return recepients;
 	}
 	
 	@RequestMapping(value = "/deleterecepient/{recepientid}", method = RequestMethod.DELETE)
-	public String deleteRecepient(@PathVariable("recepientid") Long recepientid){
+	public String deleteRecepient(@PathVariable("recepientid") Integer recepientid){
 		
 		this.recepientService.deleteRecepient(recepientid);
 		return "Deleted Payee";

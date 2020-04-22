@@ -23,20 +23,17 @@ public class RecepientService {
     @Autowired
     RecepientRepository recepientRepository;
     
-  	public String addRecepient(@RequestBody Recepient recepient){
-  		this.recepientRepository.saveAndFlush(recepient);
-  		return "Succesfully Added Payee";
+  	public Recepient addRecepient(Recepient recepient){
+  		return recepientRepository.saveAndFlush(recepient);  		
   	}
   	
-  	public List<Recepient> getRecepients(Long custaccountid){
-   	 
-   	 List<Recepient> payees = this.recepientRepository.findPayementList(custaccountid);    	 
-   	 return payees;
+  	public List<Recepient> getRecepients(Integer custId){   	 
+   	 return this.recepientRepository.findByCustId(custId);
     }
     
-    public void deleteRecepient(Long recepientid){
+    public void deleteRecepient(Integer recepientid){
    	 
-   	 this.recepientRepository.delete(recepientid);
+   	   this.recepientRepository.deleteById(recepientid);
     }
    
 
