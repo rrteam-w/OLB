@@ -2,53 +2,60 @@ package com.rrteam.olb.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "appointment")
+@SequenceGenerator(name="appseq", initialValue=5001, allocationSize=998)
 public class Appointment {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long appointmentid;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "appseq")
+	@Column(name = "appointment_id")
+	private int appointmentId;
 
-	@Column(name = "custid", nullable = true, length = 45)
-	private Long custid;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "cust_id", nullable = false)
+	private Customer customer;
 
-	@Column(name = "appointmentdate", nullable = true, length = 45)
-	private String appointmentdate;
+	@Column(name = "appointment_date", nullable = true, length = 45)
+	private String appointmentDate;
 
-	@Column(name = "APPOINTMENT_DESC", nullable = true, length = 30)
+	@Column(name = "appointment_desc", nullable = true, length = 30)
 	private String description;
 
-	@Column(name = "APPOINTMENT_CNF", nullable = true, length = 15)
-	private boolean approve;
+	@Column(name = "appointment_cnf", nullable = false, columnDefinition = "boolean default false")
+	private Boolean approve;
 
-	public Long getCustid() {
-		return custid;
+	public int getAppointmentId() {
+		return appointmentId;
 	}
 
-	public void setCustid(Long custid) {
-		this.custid = custid;
+	public void setAppointmentId(int appointmentId) {
+		this.appointmentId = appointmentId;
 	}
 
-	public Long getAppointmentid() {
-		return appointmentid;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setAppointmentid(Long appointmentid) {
-		this.appointmentid = appointmentid;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
-	public String getAppointmentdate() {
-		return appointmentdate;
+	public String getAppointmentDate() {
+		return appointmentDate;
 	}
 
-	public void setAppointmentdate(String appointmentdate) {
-		this.appointmentdate = appointmentdate;
+	public void setAppointmentDate(String appointmentDate) {
+		this.appointmentDate = appointmentDate;
 	}
 
 	public String getDescription() {
@@ -59,12 +66,14 @@ public class Appointment {
 		this.description = description;
 	}
 
-	public boolean isApprove() {
+	public Boolean getApprove() {
 		return approve;
 	}
 
-	public void setApprove(boolean approve) {
+	public void setApprove(Boolean approve) {
 		this.approve = approve;
 	}
 
+	
+	
 }

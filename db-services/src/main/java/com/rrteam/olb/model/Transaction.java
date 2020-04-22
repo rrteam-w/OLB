@@ -4,53 +4,60 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "transaction")
+@SequenceGenerator(name="transeq", initialValue=5001, allocationSize=998)
 public class Transaction implements Serializable {
 
 	private static final long serialVersionUID = -6894892329132650887L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String trasactionId;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="transeq")
+	@Column(name = "trasaction_id")
+	private int trasactionId;
 	
-	@Column(name = "accountId", nullable = true, length = 45)
-	private String accountId;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "account_id", nullable = false)
+	private Account account;
 	
-	@Column(name = "transactionType", nullable = true, length = 45)
+	@Column(name = "transaction_type", nullable = true, length = 45)
 	private String transactionType;
 	
-	@Column(name = "beneficiaryAccountId", nullable = true, length = 45)
+	@Column(name = "beneficiary_account_id", nullable = true, length = 45)
 	private String beneficiaryAccountId;
 	
-	@Column(name = "transactionAmount", nullable = true, length = 45)
+	@Column(name = "transaction_amount", nullable = true, length = 45)
 	private String transactionAmount;
 	
-	@Column(name = "transactionDt", nullable = true, length = 45)
+	@Column(name = "transaction_dt", nullable = true, length = 45)
 	private String transactionDt;
 	
-	@Column(name = "transactionRemark", nullable = true, length = 45)
+	@Column(name = "transaction_remark", nullable = true, length = 45)
 	private String transactionRemark;
 
-	public String getTrasactionId() {
+	public int getTrasactionId() {
 		return trasactionId;
 	}
 
-	public void setTrasactionId(String trasactionId) {
+	public void setTrasactionId(int trasactionId) {
 		this.trasactionId = trasactionId;
 	}
 
-	public String getAccountId() {
-		return accountId;
+	public Account getAccount() {
+		return account;
 	}
 
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	public String getTransactionType() {
@@ -93,4 +100,5 @@ public class Transaction implements Serializable {
 		this.transactionRemark = transactionRemark;
 	}
 
+	
 }

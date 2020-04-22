@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class Recepient {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "custId", nullable = false)
+    @JoinColumn(name = "cust_id", nullable = false)
 	private Customer customer;
 
 	@Column(name = "beneficiary_account_id", nullable = true, length = 45)

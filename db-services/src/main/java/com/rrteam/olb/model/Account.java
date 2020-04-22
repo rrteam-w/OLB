@@ -1,63 +1,90 @@
 package com.rrteam.olb.model;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Account")
+@Table(name="account")
+@SequenceGenerator(name="accseq", initialValue=4001, allocationSize=998)
 public class Account implements Serializable {
 
 	private static final long serialVersionUID = -2596900152895137272L;
 	
-	@Column(name="accountId")
-	private String accountId;
-	
 	@Id
-	@Column(name="custId")
-	private String custId;
+	@Column(name="account_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="accseq")
+	private int accountId;
 	
-	@Column(name="accountBalance")
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "cust_id", nullable = false)
+	private Customer customer;
+	
+	@Column(name="account_balance")
 	private String accountBalance;
 	
-	@Column(name="accountType")
+	@Column(name="account_type")
 	private String accountType;
 	
-	private List<Transaction> transactions;
-	
-	public String getAccountId() {
+	@OneToMany(cascade = CascadeType.ALL,
+	            fetch = FetchType.LAZY,
+	            mappedBy = "account")
+	private Set<Transaction> transactions = new HashSet<>();
+
+	public int getAccountId() {
 		return accountId;
 	}
-	public void setAccountId(String accountId) {
+
+	public void setAccountId(int accountId) {
 		this.accountId = accountId;
 	}
-	public String getCustId() {
-		return custId;
+
+	public Customer getCustomer() {
+		return customer;
 	}
-	public void setCustId(String custId) {
-		this.custId = custId;
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
+
 	public String getAccountBalance() {
 		return accountBalance;
 	}
+
 	public void setAccountBalance(String accountBalance) {
 		this.accountBalance = accountBalance;
 	}
+
 	public String getAccountType() {
 		return accountType;
 	}
+
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-	public List<Transaction> getTransactions() {
+
+	public Set<Transaction> getTransactions() {
 		return transactions;
 	}
-	public void setTransactionDetails(List<Transaction> transactions) {
+
+	public void setTransactions(Set<Transaction> transactions) {
 		this.transactions = transactions;
 	}
+	
+	
+	
 }
