@@ -1,4 +1,4 @@
-package com.rrteam.service;
+package com.rrteam.olb.service;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.rrteam.model.Appointment;
-import com.rrteam.repository.AppointmentRepository;
+import com.rrteam.olb.model.Appointment;
+import com.rrteam.olb.repository.AppointmentRepository;
 
 @Service
 public class AppointmentService {

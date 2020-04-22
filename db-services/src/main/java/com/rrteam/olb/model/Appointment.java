@@ -1,34 +1,30 @@
-package com.rrteam.model;
-
-import java.util.Date;
+package com.rrteam.olb.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "APPOINTMENT_DB")
+@Table(name = "appointment")
 public class Appointment {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long appointmentid;
-	
-	@Column(name = "CUST_ID",nullable = true, length = 25)
+
+	@Column(name = "custid", nullable = true, length = 45)
 	private Long custid;
-	
-	@Column(name = "APPOINTMENT_DATE",nullable = true, length = 25)
+
+	@Column(name = "appointmentdate", nullable = true, length = 45)
 	private String appointmentdate;
-		
-	@Column(name = "APPOINTMENT_DESC",nullable = true, length = 30)
+
+	@Column(name = "APPOINTMENT_DESC", nullable = true, length = 30)
 	private String description;
-	
-	@Column(name = "APPOINTMENT_CNF",nullable = true, length = 15)
+
+	@Column(name = "APPOINTMENT_CNF", nullable = true, length = 15)
 	private boolean approve;
 
 	public Long getCustid() {
@@ -55,8 +51,6 @@ public class Appointment {
 		this.appointmentdate = appointmentdate;
 	}
 
-	
-
 	public String getDescription() {
 		return description;
 	}
@@ -73,6 +67,4 @@ public class Appointment {
 		this.approve = approve;
 	}
 
-	
-	
 }

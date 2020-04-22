@@ -1,4 +1,4 @@
-package com.rrteam.controller;
+package com.rrteam.olb.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rrteam.model.Appointment;
-import com.rrteam.service.AppointmentService;
+import com.rrteam.olb.model.Appointment;
+import com.rrteam.olb.service.AppointmentService;
 
 @RestController
 @RequestMapping("/appointment") 

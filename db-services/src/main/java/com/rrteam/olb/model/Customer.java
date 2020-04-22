@@ -1,4 +1,4 @@
-package com.rrteam.model;
+package com.rrteam.olb.model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,7 +17,7 @@ public class Customer implements Serializable {
 	private String lastName;
 	private String email;
 	private String phone;
-	private List<Accounts> accountDetails;
+	private List<Account> accountDetails;
 	
 	
 	public String getCustId() {
@@ -63,10 +63,10 @@ public class Customer implements Serializable {
 		this.phone = phone;
 	}
 
-	public List<Accounts> getAccountDetails() {
+	public List<Account> getAccountDetails() {
 		return accountDetails;
 	}
-	public void setAccountDetails(List<Accounts> accountDetails) {
+	public void setAccountDetails(List<Account> accountDetails) {
 		this.accountDetails = accountDetails;
 	}
 

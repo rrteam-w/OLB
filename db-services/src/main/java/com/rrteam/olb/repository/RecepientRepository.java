@@ -1,4 +1,4 @@
-package com.rrteam.repository;
+package com.rrteam.olb.repository;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rrteam.model.Recepient;
+import com.rrteam.olb.model.Recepient;
 
 public interface RecepientRepository extends JpaRepository<Recepient, Long>{
 	

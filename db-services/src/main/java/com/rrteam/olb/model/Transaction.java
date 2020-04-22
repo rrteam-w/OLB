@@ -2,19 +2,39 @@ package com.rrteam.olb.model;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@XmlRootElement(name = "Transactions")
+@Entity
+@Table(name = "transaction")
 public class Transaction implements Serializable {
 
 	private static final long serialVersionUID = -6894892329132650887L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String trasactionId;
+	
+	@Column(name = "accountId", nullable = true, length = 45)
 	private String accountId;
+	
+	@Column(name = "transactionType", nullable = true, length = 45)
 	private String transactionType;
+	
+	@Column(name = "beneficiaryAccountId", nullable = true, length = 45)
 	private String beneficiaryAccountId;
+	
+	@Column(name = "transactionAmount", nullable = true, length = 45)
 	private String transactionAmount;
+	
+	@Column(name = "transactionDt", nullable = true, length = 45)
 	private String transactionDt;
+	
+	@Column(name = "transactionRemark", nullable = true, length = 45)
 	private String transactionRemark;
 
 	public String getTrasactionId() {

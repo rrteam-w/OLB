@@ -1,4 +1,4 @@
-package com.rrteam.model;
+package com.rrteam.olb.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,38 +8,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Recepient_DB")
+@Table(name = "recipient")
 public class Recepient {
+
+	@Column(name = "custid", nullable = true, length = 40)
+	private Long custid;
+
+	@Column(name = "beneficiary_account_id", nullable = true, length = 45)
+	private String beneficiary_account_id;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long beneficiaryid;
+	private Long beneficiary_Id;
 
-	@Column(name = "CUST_ID", nullable = true, length = 20)
-	private Long custid;
+	@Column(name = "beneficiary_name", nullable = true, length = 45)
+	private String beneficiary_name;
 
-	@Column(name = "ACCOUNT_NUMBER", nullable = true, length = 25)
-	private String beneficiaryaccnum;
+	@Column(name = "beneficiary_phone", nullable = true, length = 45)
+	private String beneficiary_phone;
 
-	@Column(name = "PHONE_NUMBER", nullable = true, length = 25)
-	private String beneficiaryphnum;
+	@Column(name = "beneficiary_email", nullable = true, length = 45)
+	private String beneficiary_email;
 
-	@Column(name = "EMAIL", nullable = true, length = 25)
-	private String beneficiaryemail;
-
-	@Column(name = "BENEFICIARY_TYPE", nullable = true, length = 15)
-	private String beneficarytype;
-
-	@Column(name = "BENEFICIARY_BANK", nullable = true, length = 20)
-	private String beneficiarybank;
-
-	public Long getBeneficiaryid() {
-		return beneficiaryid;
-	}
-
-	public void setBeneficiaryid(Long beneficiaryid) {
-		this.beneficiaryid = beneficiaryid;
-	}
+	@Column(name = "beneficiary_type", nullable = true, length = 45)
+	private String beneficiary_type;
 
 	public Long getCustid() {
 		return custid;
@@ -49,44 +41,52 @@ public class Recepient {
 		this.custid = custid;
 	}
 
-	public String getBeneficiaryaccnum() {
-		return beneficiaryaccnum;
+	public String getBeneficiary_account_id() {
+		return beneficiary_account_id;
 	}
 
-	public void setBeneficiaryaccnum(String beneficiaryaccnum) {
-		this.beneficiaryaccnum = beneficiaryaccnum;
+	public void setBeneficiary_account_id(String beneficiary_account_id) {
+		this.beneficiary_account_id = beneficiary_account_id;
 	}
 
-	public String getBeneficiaryphnum() {
-		return beneficiaryphnum;
+	public Long getBeneficiary_Id() {
+		return beneficiary_Id;
 	}
 
-	public void setBeneficiaryphnum(String beneficiaryphnum) {
-		this.beneficiaryphnum = beneficiaryphnum;
+	public void setBeneficiary_Id(Long beneficiary_Id) {
+		this.beneficiary_Id = beneficiary_Id;
 	}
 
-	public String getBeneficiaryemail() {
-		return beneficiaryemail;
+	public String getBeneficiary_name() {
+		return beneficiary_name;
 	}
 
-	public void setBeneficiaryemail(String beneficiaryemail) {
-		this.beneficiaryemail = beneficiaryemail;
+	public void setBeneficiary_name(String beneficiary_name) {
+		this.beneficiary_name = beneficiary_name;
 	}
 
-	public String getBeneficarytype() {
-		return beneficarytype;
+	public String getBeneficiary_phone() {
+		return beneficiary_phone;
 	}
 
-	public void setBeneficarytype(String beneficarytype) {
-		this.beneficarytype = beneficarytype;
+	public void setBeneficiary_phone(String beneficiary_phone) {
+		this.beneficiary_phone = beneficiary_phone;
 	}
 
-	public String getBeneficiarybank() {
-		return beneficiarybank;
+	public String getBeneficiary_email() {
+		return beneficiary_email;
 	}
 
-	public void setBeneficiarybank(String beneficiarybank) {
-		this.beneficiarybank = beneficiarybank;
+	public void setBeneficiary_email(String beneficiary_email) {
+		this.beneficiary_email = beneficiary_email;
+	}
+
+	public String getBeneficiary_type() {
+		return beneficiary_type;
+	}
+
+	public void setBeneficiary_type(String beneficiary_type) {
+		this.beneficiary_type = beneficiary_type;
 	}
 
 }

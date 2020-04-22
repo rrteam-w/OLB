@@ -1,4 +1,4 @@
-package com.rrteam.repository;
+package com.rrteam.olb.repository;
 
 public class CustomerRepository {
 
