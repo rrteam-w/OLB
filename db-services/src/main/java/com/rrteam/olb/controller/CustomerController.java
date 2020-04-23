@@ -26,7 +26,6 @@ public class CustomerController {
 		return this.customerService.getAllCustomers();
 	}
 
-	
 	  @RequestMapping(value = "/adduser", method = RequestMethod.POST, consumes =
 	  MediaType.APPLICATION_JSON_VALUE, produces =
 	  MediaType.APPLICATION_JSON_VALUE)

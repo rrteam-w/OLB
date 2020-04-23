@@ -4,16 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+//import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
+//import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "recipient")
-@SequenceGenerator(name="recseq", initialValue=3001, allocationSize=998)
 public class Recepient {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -24,7 +23,7 @@ public class Recepient {
 	private String beneficiaryAccountId;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="recseq")
+	@GeneratedValue
 	@Column(name = "beneficiary_Id")
 	private int beneficiaryId;
 

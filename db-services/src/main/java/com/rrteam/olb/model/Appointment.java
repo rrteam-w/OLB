@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "appointment")
-@SequenceGenerator(name="appseq", initialValue=5001, allocationSize=998)
+@SequenceGenerator(name = "appseq", initialValue = 5001, allocationSize = 998)
 public class Appointment {
 
 	@Id
@@ -22,7 +22,7 @@ public class Appointment {
 	private int appointmentId;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "cust_id", nullable = false)
+	@JoinColumn(name = "cust_id", nullable = false)
 	private Customer customer;
 
 	@Column(name = "appointment_date", nullable = true, length = 45)
@@ -74,6 +74,4 @@ public class Appointment {
 		this.approve = approve;
 	}
 
-	
-	
 }

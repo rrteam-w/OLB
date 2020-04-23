@@ -14,19 +14,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
+//import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="account")
-@SequenceGenerator(name="accseq", initialValue=4001, allocationSize=998)
+//@SequenceGenerator(name="accseq", initialValue=4001, allocationSize=998)
 public class Account implements Serializable {
 
 	private static final long serialVersionUID = -2596900152895137272L;
 	
 	@Id
-	@Column(name="account_id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="accseq")
+	@Column(name="account_Id")
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="accseq")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int accountId;
 	
 	
@@ -40,9 +41,7 @@ public class Account implements Serializable {
 	@Column(name="account_type")
 	private String accountType;
 	
-	@OneToMany(cascade = CascadeType.ALL,
-	            fetch = FetchType.LAZY,
-	            mappedBy = "account")
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "account")
 	private Set<Transaction> transactions = new HashSet<>();
 
 	public int getAccountId() {
