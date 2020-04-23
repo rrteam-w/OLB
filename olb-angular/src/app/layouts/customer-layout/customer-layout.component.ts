@@ -24,6 +24,7 @@ export class CustomerLayoutComponent implements OnInit {
     { path: '/account', title: 'Account',  icon:'pe-7s-note2', class: '' },
     { path: '/transferfunds', title: 'Transfer Funds',  icon:'pe-7s-news-paper', class: '' },
     { path: '/request', title: 'Request ATM/Cheque',  icon:'pe-7s-user', class: '' },
+    { path: '/appointment', title: 'Appointment',  icon:'pe-7s-user', class: '' },
     { path: '/user', title: 'User Profile',  icon:'pe-7s-user', class: '' }
     ]
 

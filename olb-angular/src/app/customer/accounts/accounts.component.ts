@@ -23,6 +23,7 @@ export class AccountsComponent implements OnInit {
   ngOnInit(): void {
     this.accService.getAccountDetails().subscribe(resp => {
       this.accountDetails = resp;
+      console.log(this.accountDetails);
       this.savings = ((this.accountDetails.accountType) === 'Saving');
       this.current = ((this.accountDetails.accountType) === 'Current');
     })

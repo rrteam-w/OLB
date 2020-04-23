@@ -1,0 +1,36 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <button class="btn btn-info btn-fill pull-right" [routerLink]="['/bookappointment']">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 appointment"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th *ngFor="let cell of headerRow">{{ cell }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let appointment of appointmentDetails">
+                                    <td>{{appointment.appointmentDt}}</td>
+                                    <td>{{appointment.appointmentDesc}}</td>
+                                    <td>{{appointment.approve}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-beneficiary',
@@ -11,7 +12,7 @@ export class BeneficiaryComponent implements OnInit {
   beneficiaryForm:FormGroup;
   submitted = false;
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private router: Router) { }
 
   ngOnInit():void{
     this.beneficiaryForm = this.formBuilder.group({
@@ -34,6 +35,10 @@ export class BeneficiaryComponent implements OnInit {
 
   onCancel():void{
     this.submitted = false;
+  }
+
+  showFunds(){
+    this.router.navigateByUrl('/transferfunds');
   }
 
 }

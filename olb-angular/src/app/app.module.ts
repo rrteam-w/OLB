@@ -20,6 +20,8 @@ import { AccountsComponent } from './customer/accounts/accounts.component';
 import { CustomerLayoutComponent } from './layouts/customer-layout/customer-layout.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
+
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,

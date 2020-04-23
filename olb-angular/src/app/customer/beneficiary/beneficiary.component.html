@@ -6,6 +6,11 @@
                     <div class="content">
                         <form [formGroup]="beneficiaryForm" (ngSubmit)="onSubmit()">
                             <div class="row">
+                                <div class="col-md-12">
+                                    <button class="pull-right btn btn-primary" (click)="showFunds()">Back</button>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-4">
                                     <label for="btype">Beneficiary Type</label>
                                 </div>
