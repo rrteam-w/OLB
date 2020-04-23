@@ -40,8 +40,6 @@ public class Recepient {
 	@Column(name = "beneficiary_type", nullable = true, length = 45)
 	private String beneficiaryType;
 	
-	
-
 	public Customer getCustomer() {
 		return customer;
 	}

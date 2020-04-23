@@ -21,26 +21,26 @@ public class RecepientController {
 	@Autowired
 	RecepientService recepientService;
 	
-	  //add payee
-  	@RequestMapping(value = "/add", method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
-  	public Recepient addRecepient(@RequestBody Recepient recepient){
-  		return this.recepientService.addRecepient(recepient);  		
-  	}
-  	
-	@RequestMapping(value = "/findrecepients/{custaccountid}", method = RequestMethod.GET)
-	public List<Recepient> getRecepients(@PathVariable("custaccountid") Integer custaccountid){
 	
-		List<Recepient> recepients = this.recepientService.getRecepients(custaccountid);
-		return recepients;
-	}
-	
-	@RequestMapping(value = "/deleterecepient/{recepientid}", method = RequestMethod.DELETE)
-	public String deleteRecepient(@PathVariable("recepientid") Integer recepientid){
-		
-		this.recepientService.deleteRecepient(recepientid);
-		return "Deleted Payee";
-		
-	}
+	  @RequestMapping(value = "/add", method = RequestMethod.POST,consumes =
+	  MediaType.APPLICATION_JSON_VALUE) public Recepient addRecepient(@RequestBody
+	  Recepient recepient){ return this.recepientService.addRecepient(recepient); }
+	  
+	  @RequestMapping(value = "/findrecepients/{custaccountid}", method =
+	  RequestMethod.GET) public List<Recepient>
+	  getRecepients(@PathVariable("custaccountid") Integer custaccountid){
+	  
+	  List<Recepient> recepients =
+	  this.recepientService.getRecepients(custaccountid); return recepients; }
+	  
+	  @RequestMapping(value = "/deleterecepient/{recepientid}", method =
+	  RequestMethod.DELETE) public String
+	  deleteRecepient(@PathVariable("recepientid") Integer recepientid){
+	  
+	  this.recepientService.deleteRecepient(recepientid); return "Deleted Payee";
+	  
+	  }
+	 
 
 
 }

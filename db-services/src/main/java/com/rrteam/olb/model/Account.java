@@ -84,7 +84,4 @@ public class Account implements Serializable {
 	public void setTransactions(Set<Transaction> transactions) {
 		this.transactions = transactions;
 	}
-	
-	
-	
 }

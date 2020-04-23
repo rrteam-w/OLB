@@ -28,9 +28,4 @@ public class AppointmentService {
 	 public List<Appointment> allAppointments() {
 	        return appointmentrepo.findAll();
 	    }	 
-	 
-	 public Appointment myScheduleAppointment(Long appointmentid){
-		 return this.appointmentrepo.findOne(appointmentid);
-	 }
-
 }

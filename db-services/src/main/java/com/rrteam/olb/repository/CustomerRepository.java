@@ -1,5 +1,9 @@
 package com.rrteam.olb.repository;
 
-public class CustomerRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.rrteam.olb.model.Customer;
+
+public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
 }
