@@ -15,8 +15,7 @@ export class AppointmentComponent implements OnInit {
   ngOnInit(): void {
     this.headerRow = ['Date', 'Description', 'Status'];
     this.appointmentService.getAppointmentDetails().subscribe(resp => {
-      this.appointmentDetails = resp;
-      console.log(this.appointmentDetails);
+      this.appointmentDetails = resp.appointments;
     });
   }
 
