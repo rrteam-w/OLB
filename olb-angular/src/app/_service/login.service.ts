@@ -17,8 +17,8 @@ export class LoginService {
               // login successful if there's a jwt token in the response
               if (user && (user.email == email && user.password == password)) { // && user.token
                   // store user details and jwt token in local storage to keep user logged in between page refreshes
-                  // localStorage.setItem('currentUser', JSON.stringify(user));
-                  localStorage.setItem('isLoggedin', "true");
+                  sessionStorage.setItem('currentUser', JSON.stringify(user));
+                  sessionStorage.setItem('isLoggedin', "true");
                   user.status = 200;
               }
 
@@ -28,6 +28,7 @@ export class LoginService {
 
   logout() {
       // remove user from local storage to log user out
-      localStorage.removeItem('isLoggedin');
+      sessionStorage.removeItem('currentUser');
+      sessionStorage.removeItem('isLoggedin');
   }
 }

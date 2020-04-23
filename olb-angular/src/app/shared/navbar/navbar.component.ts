@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit{
     location: Location;
     private toggleButton: any;
     private sidebarVisible: boolean;
+    user:any;
     @Input() routes: any[];
 
     constructor(location: Location,  private element: ElementRef, private router: Router) {
@@ -25,6 +26,7 @@ export class NavbarComponent implements OnInit{
       this.listTitles = this.routes.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
+      this.user = JSON.parse(sessionStorage.getItem("currentUser"));
     }
     sidebarOpen() {
         const toggleButton = this.toggleButton;
@@ -66,7 +68,8 @@ export class NavbarComponent implements OnInit{
     }
 
     logout() {
-        localStorage.removeItem("isLoggedin");
+        sessionStorage.removeItem('currentUser');
+        sessionStorage.removeItem("isLoggedin");
         this.router.navigate(['login']);
     }
 }
