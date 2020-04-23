@@ -13,20 +13,21 @@ import com.rrteam.olb.model.Appointment;
 import com.rrteam.olb.service.AppointmentService;
 
 @RestController
-@RequestMapping("/appointment") 
+@RequestMapping("/appointment")
 public class AppointmentController {
-
 
 	@Autowired
 	AppointmentService appointmentService;
-	
-	  @RequestMapping(value = "/createappointment", method =
-	  RequestMethod.PUT,consumes = MediaType.APPLICATION_JSON_VALUE) public String
-	  scheduleAppointment(@RequestBody Appointment appointment) { String status =
-	  this.appointmentService.scheduleAppointment(appointment); return status; }
-	  
-	  @RequestMapping(value = "/allappointments", method = RequestMethod.GET)
-	  public List<Appointment> allAppointments(){ return
-	  this.appointmentService.allAppointments(); }
-	 
+
+	@RequestMapping(value = "/createappointment", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String scheduleAppointment(@RequestBody Appointment appointment) {
+		String status = this.appointmentService.scheduleAppointment(appointment);
+		return status;
+	}
+
+	@RequestMapping(value = "/allappointments", method = RequestMethod.GET)
+	public List<Appointment> allAppointments() {
+		return this.appointmentService.allAppointments();
+	}
+
 }
