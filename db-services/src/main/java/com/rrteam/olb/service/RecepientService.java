@@ -2,6 +2,8 @@ package com.rrteam.olb.service;
 
 import java.util.List;
 
+//import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,23 +18,24 @@ import com.rrteam.olb.repository.RecepientRepository;
 
 @Service
 public class RecepientService {
-	
+
 	@Autowired
-    DataSource dataSource;
-    
-    @Autowired
-    RecepientRepository recepientRepository;
-    
-	
-	  public Recepient addRecepient(Recepient recepient){ return
-	  recepientRepository.saveAndFlush(recepient); }
-	  
-	  public List<Recepient> getRecepients(Integer custId){ return
-	  this.recepientRepository.findByCustId(custId); }
-	  
-	  public void deleteRecepient(Integer recepientid){
-	  
-	  this.recepientRepository.deleteById(recepientid); }
-	 
+	DataSource dataSource;
+
+	@Autowired
+	RecepientRepository recepientRepository;
+
+	public Recepient addRecepient(Recepient recepient) {
+		return recepientRepository.saveAndFlush(recepient);
+	}
+
+	public List<Recepient> getRecepients(Integer custId) {
+		return this.recepientRepository.findByCustId(custId);
+	}
+
+	public void deleteRecepient(Integer recepientid) {
+
+		this.recepientRepository.deleteById(recepientid);
+	}
 
 }

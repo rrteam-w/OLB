@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "recipient")
-@SequenceGenerator(name="receseq", initialValue=5001, allocationSize=998)
+@SequenceGenerator(name="recseq", initialValue=3001, allocationSize=998)
 public class Recepient {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)

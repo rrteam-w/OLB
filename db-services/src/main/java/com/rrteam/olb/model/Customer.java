@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
@@ -22,8 +23,9 @@ public class Customer implements Serializable {
 
 	private static final long serialVersionUID = 8154553394154317648L;
 
+
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="cusseq")
 	@Column(name = "cust_id")
 	private int custId;
 	

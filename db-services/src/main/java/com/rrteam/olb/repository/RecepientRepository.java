@@ -15,6 +15,7 @@ public interface RecepientRepository extends JpaRepository<Recepient, Integer> {
 	@Query(value = "SELECT * FROM recepient t where t.custId = :CUST_ID", nativeQuery = true)
 	public List<Recepient> findPayementList(@Param("CUST_ID") Long CUST_ID);
 
-	public List<Recepient> findByCustId(Integer custId);
+	@Query(value = "SELECT * FROM recepient t where t.custId = :custId", nativeQuery = true)
+	public List<Recepient> findByCustId(@Param("custId") Integer custId);
 
 }
