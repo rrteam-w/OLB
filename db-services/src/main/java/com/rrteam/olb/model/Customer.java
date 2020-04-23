@@ -1,6 +1,7 @@
 package com.rrteam.olb.model;
 
 import java.io.Serializable;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,11 +12,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-@Table(name = "customer")
 @Entity
+@Table(name = "customer")
+@SequenceGenerator(name="custseq", initialValue=5001, allocationSize=998)
 public class Customer implements Serializable {
 
 	private static final long serialVersionUID = 8154553394154317648L;

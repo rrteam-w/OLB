@@ -8,11 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 //import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "recipient")
+@SequenceGenerator(name="receseq", initialValue=5001, allocationSize=998)
 public class Recepient {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)

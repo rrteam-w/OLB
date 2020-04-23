@@ -28,11 +28,11 @@ public class CustomerService {
 		return custsList;
 	}
 
-	public Customer addUser(Customer customer) {
+	public Customer saveCustomer(Customer customer) {
 		return null;
 	}
 
-	public void deleteSpecificUser(Integer accountid) {
+	public void deleteSpecificCustomer(Integer accountid) {
 
 	}
 
@@ -40,7 +40,7 @@ public class CustomerService {
 
 	}
 
-	public Customer getSpecificUser(Integer accountid) {
+	public Customer findCustomer(Integer accountid) {
 		
 		return null;
 	}
